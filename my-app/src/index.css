@@ -29,6 +29,7 @@ body {
     margin-top: -1px;
     padding: 0;
     text-align: center;
+    text-decoration-color: crimson;
     width: 34px;
   }
   
@@ -41,6 +42,8 @@ body {
   }
   
   .game {
+    margin-left: 45%;
+    margin-top: 10vh;
     display: flex;
     flex-direction: row;
   }
