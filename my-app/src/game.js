@@ -57,6 +57,8 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = `Winner ${winner}`;
+    } else if (draw(current.squares)) {
+      status = 'Draw';
     } else {
       status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
     }
@@ -96,6 +98,15 @@ function calculateWinner(squares) {
     }
   }
   return false;
+}
+
+function draw(squares) {
+  for (let i = 0; i < squares.length; i++) {
+    if (!squares[i]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 export default Game;
