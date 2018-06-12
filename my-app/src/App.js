@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 import Game from './game';
+import Header from './Header';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="Game">
-        <Game />
+      <div><Header />
+        <div className="Game">
+          <Game />
+        </div>
       </div>
     );
   }
