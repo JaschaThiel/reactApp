@@ -35,10 +35,10 @@ class Board extends React.Component {
   }
 }
 
-function Square() {
+function Square(properties) {
   return (
-    <button className="square" onClick={this.props.onClick}>
-      {this.props.value}
+    <button className="square" onClick={properties.onClick}>
+      {properties.value}
     </button>
   );
 }
@@ -46,7 +46,6 @@ function Square() {
 Board.propTypes = {
   squares: PropTypes.arrayOf.isRequired,
   onClick: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
 };
 
 export default Board;
