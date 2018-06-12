@@ -22,11 +22,9 @@ function calculateWinner(squares) {
   return false;
 }
 
-function draw(squares) {
-  for (let i = 0; i < squares.length; i++) {
-    if (!squares[i]) {
-      return false;
-    }
+function isDraw(squares) {
+  if (squares.includes(null)) {
+    return false;
   }
   return true;
 }
@@ -85,7 +83,7 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = `Winner ${winner}`;
-    } else if (draw(current.squares)) {
+    } else if (isDraw(current.squares)) {
       status = 'Draw';
     } else {
       status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
