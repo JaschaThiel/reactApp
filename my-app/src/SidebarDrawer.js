@@ -14,6 +14,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import HomeIcon from '@material-ui/icons/Home';
+import LinkIcon from '@material-ui/icons/Link';
+
+
 
 import Game from './game'
 
@@ -131,6 +138,16 @@ class SidebarDrawer extends React.Component {
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
+        <Divider />
+        <List>
+          {['Home', 'Links'].map((text, index) => (
+            <ListItem button key={text} onClick={index === 0 ? this.handleDrawerClose: null}>
+             <ListItemIcon>{index === 0 ? <HomeIcon />  : <LinkIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
       </Drawer>
     );
 
@@ -174,7 +191,7 @@ class SidebarDrawer extends React.Component {
             })}
           >
             <div className={classes.drawerHeader} />
-            <Typography>{'You think water moves fast? You should see ice.'}</Typography>
+            <Typography>{'Fuck FCSP!'}</Typography>
             <Game />
           </main>
           {after}
